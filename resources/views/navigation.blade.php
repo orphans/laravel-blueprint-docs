@@ -38,7 +38,7 @@
                     <ul class="nav stacked-tabs" role="tablist">
                         @foreach ($resourceGroup->resources as $resource)
                             @continue($resource->name === '')
-                            @if (strtolower($resourceGroup->name) !== strtolower($resource->name))
+                            @if (strtolower($resourceGroup->name) !== strtolower($resource->name) || !$loop->first)
                                 <li role="presentation" class="resource-header">
                                     <a href="{{ $resource->elementLink }}">{{ $resource->name }}</a>
                                 </li>
